@@ -1,4 +1,4 @@
-# PYTHON 学习笔记
+# Python 学习笔记
 
 [开源项目——Python 教程](https://github.com/walter201230/Python?tab=readme-ov-file)
 
