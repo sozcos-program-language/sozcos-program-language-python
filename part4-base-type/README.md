@@ -1,4 +1,4 @@
-# Python 基本类型
+# P3. Python 基本类型
 
 [文档地址](https://github.com/walter201230/Python/blob/master/Article/PythonBasis/python2/Preface.md)
 
@@ -51,4 +51,6 @@ print(type(int1))
 | hex(x )                | 将一个整数转换为一个十六进制字符串               |
 | oct(x )                | 将一个整数转换为一个八进制字符串                |
 
-[下一章](../part5-array/README.md)
+[下一章：P4. List 和 Tuple](../part5-array/README.md)
+
+[上一章: Hello Word!](../part3-hello-word/HelloWord.py)

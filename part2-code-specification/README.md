@@ -1,4 +1,4 @@
-# Python 编码规范
+# P2. Python 编码规范
 
 [文档地址]
 
@@ -15,7 +15,9 @@
 4. 模块名、函数名使用蛇形规则
 5. 类名使用驼峰规则,私有类和私有函数可用一个下划线开头
 
-[下一章](../part3-hello-word/HelloWord.py)
+[下一章: Hello Word!](../part3-hello-word/HelloWord.py)
+
+[上一章：P1. Python 环境安装](../part1-env-install/README.md)
 
 ---
 [文档地址]: https://github.com/walter201230/Python/blob/master/Article/codeSpecification/codeSpecification_Preface.md
