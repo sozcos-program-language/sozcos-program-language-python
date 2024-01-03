@@ -6,3 +6,4 @@
 ### [2. Python 编码规范](part2-code-specification/README.md)
 ### [3. HelloWord](part3-hello-word/HelloWord.py)
 ### [4. Python 基本类型](part4-base-type/README.md)
+### [5. List 和 Tuple](part5-array/README.md)
