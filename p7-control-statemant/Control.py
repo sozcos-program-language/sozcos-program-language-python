@@ -1,8 +1,3 @@
-# P7. 流程控制语句
-
-## 1. if
-
-```python
 # 非0
 i = 10
 if i:
@@ -46,4 +41,3 @@ if j < 10 and k > 11:
         print("我是嵌套if")
 else:
     print("第一层 else")
-```
