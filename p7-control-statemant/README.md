@@ -1,5 +1,7 @@
 # P7. 流程控制语句
 
+[文档地址](https://github.com/walter201230/Python/blob/master/Article/PythonBasis/python5/Cycle.md)
+
 ## 1. if
 
 ```python
@@ -47,3 +49,5 @@ if j < 10 and k > 11:
 else:
     print("第一层 else")
 ```
+
+## 2. for
