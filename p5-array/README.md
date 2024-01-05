@@ -13,7 +13,7 @@ print(name[0:3])
 name.append(123)
 # 删除元素
 del name[3]
-# 便利集合
+# 遍历集合
 for e in name: print(e)
 ```
 
@@ -85,7 +85,7 @@ tuple4 = (123,)
 | min(tuple) | 返回元组中元素最小值 |
 | tuple(seq) | 将列表转换为元组   |
 
-[下一章: P6. 字典](../p6-dictionary/README.md)
+[下一章: P6. dict 和 set](../p6-dictionary/README.md)
 
 [上一章: P4. Python 基本类型](../p4-base-type/README.md)
 

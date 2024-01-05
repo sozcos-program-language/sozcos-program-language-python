@@ -1,6 +1,8 @@
-# P6. 字典
+# P6. dict 和 set
 
-## 1. 字典,一种MAP数据乐星
+## 1. dict
+
+> 一种 MAP 数据结构
 
 ```python
 # 声明字典
@@ -29,5 +31,38 @@ print(dictMap)
 | popitem()      | 随机返回并删除字典中的一对键和值         |
 | dict.items()   | 以列表返回可遍历的(键, 值) 元组数组     |
 
-[上一章：P5. List 和 Tuple](../p5-array/README.md)
+---
+
+## 2. set
+
+> 无序不重复元素集\
+> py2 和 py3 语法上有不同?
+
+```python
+# 创建
+set1 = {1, '12', 123, 1, '1'}
+print(set1)
+
+# 添加元素
+set1.add('3')
+print(set1)
+
+# 交集
+s1 = {1, 2, 3, 4}
+s2 = {2, 3, 4, 5}
+s3 = s1 & s2
+print(s3)
+
+# 并集 （合并两个 set 集合的元素并去除重复的值）
+s4 = s1 | s2
+print(s4)
+
+# 差集
+s5 = s1 - s2
+print(s5)
+```
+
+[下一章: P7. 流程控制语句](../p7-control-statemant/README.md)
+
+[上一章: P5. List 和 Tuple](../p5-array/README.md)
 
