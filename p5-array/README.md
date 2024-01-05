@@ -1,6 +1,6 @@
-# P4. List 和 Tuple
+# P5. List 和 Tuple
 
-### 1——List
+## 1 List
 
 ```python
 # 声明一个 list
@@ -85,5 +85,7 @@ tuple4 = (123,)
 | min(tuple) | 返回元组中元素最小值 |
 | tuple(seq) | 将列表转换为元组   |
 
-[上一章：P3. Python 基本类型](../part4-base-type/README.md)
+[下一章: P6. 字典](../p6-dictionary/README.md)
+
+[上一章: P4. Python 基本类型](../p4-base-type/README.md)
 
