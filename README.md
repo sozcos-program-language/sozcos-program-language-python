@@ -15,3 +15,5 @@
 ### [P6. dict 和 set](/p6-dictionary/README.md)
 
 ### [P7. 流程控制语句](/p7-control-statemant/README.md)
+
+### [P8. 函数](/p8-function/README.md)

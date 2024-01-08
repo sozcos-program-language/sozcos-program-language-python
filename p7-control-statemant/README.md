@@ -107,6 +107,7 @@ if (year % 4) == 0 and (year % 100) != 0 or (year % 400) == 0:
 else:
     print('{0} 不是闰年'.format(year))
 ```
+[下一章: P8. 函数](../p8-function/README.md)
+
 [上一章: P6. dict 和 set](../p6-dictionary/README.md)
 
-[下一章: P8. 函数](../p8-function/README.md)
