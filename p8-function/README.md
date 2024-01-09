@@ -1,5 +1,7 @@
 # P8. 函数
 
+[文档地址](https://github.com/walter201230/Python/blob/master/Article/PythonBasis/python6/Preface.md)
+
 ## 1.自定义函数
 > def 函数名(参数1，参数2....参数n):\
      函数体\
@@ -83,6 +85,44 @@ def print_user_info(name, age, **var):  # 位置+不定长参数
 
  print_user_info('小明', 18, '喜欢吃路边摊', 12, 12.1)
 print_user_info(name='小明', age=18, var=('喜欢吃路边摊', 12, 12.1))
+```
+
+### 2.4 函数值问题
+> 值传递问题, 变量b存储在栈内存中, 函数内的b变量存储在堆内存中, 并且2个内存没有声明赋值, 因此他们是没有关联的两个变量
+
+```python
+def change_number(b):
+    b = 1000
+    return b
+
+
+b = 1
+# b = change_number(b), 当声明引用之后, b = 1000
+change_number(b)
+print(b)  # 1
+```
+
+### 2.5 匿名函数
+>     匿名函数基本语法\
+>     lambda [arg1 [,arg2,.....argn]]:expression\
+> 注意：尽管 lambda 表达式允许你定义简单函数，但是它的使用是有限制的。 你只能指定单个表达式，它的值就是最后的返回值。也就是说不能包含其他的语言特性了， 包括多个语句、条件表达式、迭代以及异常处理等等
+
+```python
+var = lambda name, age: "我的名字叫{}, 今年{}岁".format(name, age)
+print(var('小米', 46))
+```
+
+> 这主要在于 lambda 表达式中的 num2 是一个自由变量，在运行时绑定值，而不是定义时就绑定，这跟函数的默认值参数定义是不同的。
+
+```python
+num2 = 100
+sum1 = lambda num1: num1 + num2
+
+num2 = 10000
+sum2 = lambda num1: num1 + num2
+
+print(sum1(1)) # 10001
+print(sum2(1)) # 10001
 ```
 
 
