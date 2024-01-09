@@ -125,5 +125,6 @@ print(sum1(1)) # 10001
 print(sum2(1)) # 10001
 ```
 
+[下一章: P9. 迭代器和生成器](../p9-Iterators/README.md)
 
 [上一章: P7. 流程控制语句](../p7-control-statemant/README.md)
