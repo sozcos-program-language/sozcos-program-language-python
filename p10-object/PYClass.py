@@ -25,3 +25,31 @@ print(MyClass.var2)
 print(MyClass.var3)
 
 MyClass.func1(18)
+
+
+# 从内部添加和修改类属性
+class ClassA():
+    var1 = '小明'
+
+    @classmethod
+    def m1(cls):
+        cls.var1 = input("请输入var1新值:")
+        print("var1={}".format(cls.var1))
+        cls.var2 = input("var2 新值=")
+        print("var2={}".format(cls.var2))
+
+
+ClassA.m1()
+
+
+# 从外部修改和增加类属性
+class ClassB():
+    var1 = 10
+
+    @classmethod
+    def m2(cls):
+        print("var1={}".format(cls.var1))
+
+
+ClassB.var2 = input("classB.var2=")
+print(ClassB.var2)
