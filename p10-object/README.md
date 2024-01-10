@@ -92,3 +92,31 @@ print(class_a.v1)
 class_a.m1 = new_fun
 class_a.m1()
 ```
+
+## 4.初始化函数
+
+> 初始化函数在对象实例化的时候会被调用, 也叫构造函数\
+> 第一个参数一定要写上 self\
+> 
+> def __init__(self,[...):
+
+```python
+class Person(object):
+
+    # 构造参数
+    def __init__(self, v1):
+        print("__init__ success")
+        print(v1)
+
+    # 析构函数, 示例被销毁的时候调用
+    def __del__(self):
+        print("__del__ success")
+
+
+person = Person("我是第二个参数")
+
+# 销毁实例
+del person
+```
+
+## 5.继承
