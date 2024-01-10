@@ -29,6 +29,7 @@ print(MyClass.var3)
 
 MyClass.func1(18)
 ```
+
 ## 2.修改和增加类属性
 
 ```python
@@ -163,3 +164,39 @@ s1 = Student()
 
 
 
+
+
+## 6.多态
+
+> 多态, 同一个事件应为不同的对象做出不同的响应
+
+```python
+# 多态
+class User(object):
+    def __init__(self, name):
+        self.name = name
+
+    def printUser(self):
+        print('Hello !' + self.name)
+
+
+class UserVip(User):
+    def printUser(self):
+        print('Hello ! 尊敬的Vip用户：' + self.name)
+
+
+class UserGeneral(User):
+    def printUser(self):
+        print('Hello ! 尊敬的用户：' + self.name)
+
+
+def printUserInfo(user):
+    user.printUser()
+
+
+if __name__ == '__main__':
+    userVip = UserVip('两点水')
+    printUserInfo(userVip)
+    userGeneral = UserGeneral('水水水')
+    printUserInfo(userGeneral)
+```
