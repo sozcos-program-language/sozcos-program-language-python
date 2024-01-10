@@ -120,3 +120,46 @@ del person
 ```
 
 ## 5.继承
+
+### 单继承
+
+> **语法**:  
+> class ClassName(BaseClassName):  
+>     <statement-1>  
+>     .  
+>     <statement-N>  
+
+### 多继承
+> 多继承有一点需要注意的：若是父类中有相同的方法名，而在子类使用时未指定，  
+> python 在圆括号中父类的顺序，从左至右搜索 ， 即方法在子类中未找到时，从左到右查找父类中是否包含方法。
+
+> class ClassName(Base1,Base2,Base3):  
+>     <statement-1>  
+>     .  
+>     <statement-N>  
+
+```python
+# 继承
+class Man(object):
+    def __init__(self):
+        print("Man is init")
+
+
+class Person(object):
+    def __init__(self):
+        print("I am a person")
+
+
+class Student(Person, Man):
+    def __init__(self):
+        super().__init__()
+        print("I am a student")
+
+
+s1 = Student()
+```
+
+
+
+
+
