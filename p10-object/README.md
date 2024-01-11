@@ -3,11 +3,12 @@
 [文档地址](https://github.com/walter201230/Python/blob/master/Article/PythonBasis/python8/2.md)
 
 ## 1.类
+
 > 声明一个类:
 > class ClassName():
->     <statement-1>
->     .
->     <statement-N>
+> <statement-1>
+> .
+> <statement-N>
 
 ```python
 class MyClass():
@@ -98,7 +99,7 @@ class_a.m1()
 
 > 初始化函数在对象实例化的时候会被调用, 也叫构造函数\
 > 第一个参数一定要写上 self\
-> 
+>
 > def __init__(self,[...):
 
 ```python
@@ -126,18 +127,19 @@ del person
 
 > **语法**:  
 > class ClassName(BaseClassName):  
->     <statement-1>  
->     .  
->     <statement-N>  
+> <statement-1>  
+> .  
+> <statement-N>
 
 ### 多继承
+
 > 多继承有一点需要注意的：若是父类中有相同的方法名，而在子类使用时未指定，  
 > python 在圆括号中父类的顺序，从左至右搜索 ， 即方法在子类中未找到时，从左到右查找父类中是否包含方法。
 
 > class ClassName(Base1,Base2,Base3):  
->     <statement-1>  
->     .  
->     <statement-N>  
+> <statement-1>  
+> .  
+> <statement-N>
 
 ```python
 # 继承
@@ -159,12 +161,6 @@ class Student(Person, Man):
 
 s1 = Student()
 ```
-
-
-
-
-
-
 
 ## 6.多态
 
@@ -200,3 +196,41 @@ if __name__ == '__main__':
     userGeneral = UserGeneral('水水水')
     printUserInfo(userGeneral)
 ```
+
+## 7.类访问控制
+
+> 用双下划线声明私有属性, py 的所有属性都是公共属性, 靠人为避免
+
+```python
+class UserVip(object):
+
+    def __init__(self, name, age):
+        super().__init__(name)
+        self.__name = name
+        self.__age = age
+
+    def __pri_md__(self, other):
+        print("我是私有方法")
+
+    def printUser(self):
+        print('Hello ! 尊敬的Vip用户：' + self.name)
+```
+
+> 类的专有方法：
+
+| 方法             | 说明            |
+|----------------|---------------|
+| `__init__`     | 构造函数，在生成对象时调用 |
+| `__del__ `     | 析构函数，释放对象时使用  |
+| `__repr__ `    | 打印，转换         |
+| `__setitem__ ` | 按照索引赋值        |
+| `__getitem__`  | 按照索引获取值       |
+| `__len__`      | 获得长度          |
+| `__cmp__`      | 比较运算          |
+| `__call__`     | 函数调用          |
+| `__add__`      | 加运算           |
+| `__sub__`      | 减运算           |
+| `__mul__`      | 乘运算           |
+| `__div__`      | 除运算           |
+| `__mod__`      | 求余运算          |
+| `__pow__`      | 乘方            |

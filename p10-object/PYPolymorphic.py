@@ -8,6 +8,16 @@ class User(object):
 
 
 class UserVip(User):
+
+    # 用双下划线声明私有属性, py 的所有属性都是公共属性, 靠人为避免
+    def __init__(self, name, age):
+        super().__init__(name)
+        self.__name = name
+        self.__age = age
+
+    def __pri_md__(self, other):
+        print("我是私有方法")
+
     def printUser(self):
         print('Hello ! 尊敬的Vip用户：' + self.name)
 
