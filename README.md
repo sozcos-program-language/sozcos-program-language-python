@@ -21,3 +21,7 @@
 ### [P9. 迭代器和生成器](p9-Iterators/README.md)
 
 ### [P10. 面向对象](p10-object/README.md)
+
+### [P11. Python 模块](p11-module/README.md)
+
+### [P12. 魔法函数](p12-megic-function/README.md)

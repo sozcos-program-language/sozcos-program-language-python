@@ -61,9 +61,6 @@ if __name__ == '__main__':
 
 ### 使用 _xxx 来表示是内部变量
 
+[下一章: P12. 魔法函数](../p12-megic-function/README.md)
 
 [上一章: P10. 面向对象](../p10-object/README.md)
-
-
-
-
