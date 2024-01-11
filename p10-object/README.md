@@ -234,3 +234,8 @@ class UserVip(object):
 | `__div__`      | 除运算           |
 | `__mod__`      | 求余运算          |
 | `__pow__`      | 乘方            |
+
+
+[下一章: P11. Python 模块](../p11-module/README.md)
+
+[上一章: P9. 迭代器和生成器](../p9-Iterators/README.md)
