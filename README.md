@@ -25,3 +25,9 @@
 ### [P11. Python 模块](p11-module/README.md)
 
 ### [P12. 魔法函数](p12-megic-function/README.md)
+
+### [P13. Python 枚举](p13-enums/README.md)
+
+### [P14. 元类](p14-metaclass/README.md)
+
+### [P15. 线程](p15-thread/README.md)
