@@ -58,6 +58,6 @@ print(f(2))
 print(name)
 ```
 
-
+[下一章: P18. 装饰器模式](../p18-decorator/README.md)
 
 [上一章: P16. 正则表达式](../p16-regular/README.md)
