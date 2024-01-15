@@ -36,3 +36,4 @@
 
 ### [P17. 闭包](p17-closure/README.md)
 
+### [P18. 装饰器模式](p18-decorator/README.md)
