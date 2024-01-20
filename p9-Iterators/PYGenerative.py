@@ -11,6 +11,9 @@ print(arr1)
 arr2 = [x * x for x in range(1, 8) if x % 2 == 0]
 print(arr2)
 
+for e in range(1, 10, 2):
+    print("指定步长的区间元素定义: e = {}".format(e))
+
 """
 generator 生成器
 
