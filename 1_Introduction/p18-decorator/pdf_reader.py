@@ -2,7 +2,6 @@ import nest_asyncio
 import os
 
 from llama_parse import LlamaParse
-from llama_index.core.node_parser import MarkdownElementNodeParser
 
 nest_asyncio.apply()
 
@@ -22,6 +21,3 @@ documents = parser.load_data("CN111709349B.pdf")
 for document in documents:
     # print(document.text)
     print(document.get_content())
-
-
-node_parser = MarkdownElementNodeParser(llm=OpenAI(model="gpt-3.5-turbo-16k"), num_workers=2)
