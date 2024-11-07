@@ -1,6 +1,7 @@
 # 定义一个枚举类
 from enum import Enum, unique
 
+# 生命一个名为 sex 的枚举, 其中有 men , woman 2个属性
 Sex = Enum('sex', ('man', 'woman'))
 
 for name, m in Sex.__members__.items():
