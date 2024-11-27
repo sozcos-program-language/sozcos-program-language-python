@@ -24,6 +24,7 @@ money = 100
 def query_balance():
     print(f"您好, {name}, 您的余额为:{money}")
 
+
 """
 存款函数
 """
@@ -40,6 +41,7 @@ def withdraw():
     global money
     money -= int(input("请输入取款金额:"))
     print(f"您好, {name}, 您的余额为:{money}")
+
 
 """
 主菜单
