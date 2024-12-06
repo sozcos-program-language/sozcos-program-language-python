@@ -7,3 +7,5 @@ class Student:
 
     def __le__(self, other):
         return self.age <= other.age
+
+    __name__ = "Student"
