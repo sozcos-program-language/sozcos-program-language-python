@@ -1,5 +1,5 @@
 class Phone:
-    __is__5g_enable = true
+    __is__5g_enable = True
 
     def __check_5g(self):
         if self.__is__5g_enable:
