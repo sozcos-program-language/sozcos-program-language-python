@@ -1,36 +1,120 @@
-def calculate_break_even_months(daily_profit, total_monthly_cost):
-    # 每月盈利
-    monthly_profit = daily_profit * 30  # 假设每月30天
+import calendar
+from datetime import datetime
 
-    # 计算回本周期
-    months_to_break_even = -(-total_monthly_cost // (monthly_profit - total_monthly_cost))  # 使用负数整除来实现向上取整
+# 获取当前年月和天数
+today = datetime.today()
+year = today.year
+month = today.month
+days_in_month = calendar.monthrange(year, month)[1]
 
-    return months_to_break_even
 
-def main():
-    # 输入每日盈利
-    daily_profit = float(input("请输入每日盈利（元）："))
-
-    # 初始化每月成本总额
-    total_monthly_cost = 0.0
-
-    # 输入成本明细
+def input_monthly_costs():
+    """
+    输入本月的成本项，逐项输入，回车结束
+    """
+    print("📥 请输入本月成本项如：月租，宽带，电费，水费等（每次输入一个金额，按回车结束）：")
+    costs = []
     while True:
-        cost_item = input("请输入成本明细（例如：手机费用，卡月租费用，宽带费用，电费等），输入'完成'结束：")
-        if cost_item == "完成":
+        value = input("> ")
+        if value.strip() == "":
             break
         try:
-            cost = float(cost_item)
-            total_monthly_cost += cost
+            cost = float(value)
+            costs.append(cost)
         except ValueError:
-            print("输入无效，请输入一个数值。")
+            print("⚠️ 请输入有效数字")
+    return sum(costs)
 
-    # 计算回本周期
-    months_to_break_even = calculate_break_even_months(daily_profit, total_monthly_cost)
 
-    # 输出结果
-    print(f"每月成本总额为：{total_monthly_cost} 元")
-    print(f"回本周期为：{months_to_break_even} 个月")
+def input_daily_revenue():
+    """
+    输入每日收益金额
+    """
+    while True:
+        try:
+            revenue = float(input("\n请输入每日盈利金额："))
+            return revenue
+        except ValueError:
+            print("⚠️ 请输入有效数字")
+
+
+def calc_gross_profit(daily_revenue, monthly_cost, days_in_month):
+    """
+    计算每日毛利
+    """
+    daily_cost = monthly_cost / days_in_month
+    daily_profit = daily_revenue - daily_cost
+    return daily_profit, daily_cost
+
+
+def print_month_summary(daily_profit, daily_cost, daily_revenue, monthly_cost, days_in_month):
+    """
+    打印当前月份的汇总
+    """
+    total_revenue = daily_revenue * days_in_month
+    total_profit = daily_profit * days_in_month
+
+    print(f"\n------ {year} 年 {month} 月 汇总 ------")
+    print(f"天数：{days_in_month} 天； 总盈利：{total_revenue:.2f} 元； 总成本：{monthly_cost:.2f} 元； 总毛利：{total_profit:.2f} 元")
+    print(f"每日成本：{daily_cost:.2f} 元； 每日毛利：{daily_profit:.2f} 元")
+
+    return total_revenue, total_profit
+
+
+def print_year_summary(monthly_revenue, monthly_cost):
+    """
+    打印全年汇总（按当前月情况估算）
+    """
+    total_yearly_revenue = monthly_revenue * 12
+    total_yearly_cost = monthly_cost * 12
+    yearly_profit = total_yearly_revenue - total_yearly_cost
+
+    print(f"\n------ {year} 全年 汇总 ------")
+    print(f"总盈利：{total_yearly_revenue:.2f} 元； 总成本：{total_yearly_cost:.2f} 元； 总毛利：{yearly_profit:.2f} 元")
+
+
+def print_payback_cycle(monthly_cost, daily_profit, days_in_month):
+    """
+    输出当前成本和毛利下的回本周期
+    """
+    print("\n------ 回本周期 ------")
+    if daily_profit <= 0:
+        print("❌ 每日毛利为负或为 0，无法计算回本周期")
+    else:
+        days_to_payback = monthly_cost / daily_profit
+        months_to_payback = days_to_payback / days_in_month
+        print(f"累计回本天数：{days_to_payback:.2f} 天； 累计回本月数：{months_to_payback:.2f} 个月")
+
+
+def suggest_cost_by_target_days(daily_profit, days_in_month):
+    """
+    根据目标回本周期（30/60/90天）建议最大月成本
+    """
+    print("\n------ 建议投入成本（按目标回本周期） ------")
+    if daily_profit <= 0:
+        print("⚠️ 当前每日毛利为 0 或负值，建议不要投入成本。")
+        return
+
+    for days in [30, 60, 90]:
+        max_total_cost = daily_profit * days
+        suggested_monthly_cost = max_total_cost / days * days_in_month
+        print(f"🕒 希望在 {days} 天内回本，建议每月投入不超过：{suggested_monthly_cost:.2f} 元/月")
+
+
+def main():
+    monthly_cost = input_monthly_costs()
+    daily_revenue = input_daily_revenue()
+
+    daily_profit, daily_cost = calc_gross_profit(daily_revenue, monthly_cost, days_in_month)
+
+    total_revenue, total_profit = print_month_summary(
+        daily_profit, daily_cost, daily_revenue, monthly_cost, days_in_month
+    )
+
+    print_year_summary(total_revenue, monthly_cost)
+    print_payback_cycle(monthly_cost, daily_profit, days_in_month)
+    suggest_cost_by_target_days(daily_profit, days_in_month)
+
 
 if __name__ == "__main__":
     main()
